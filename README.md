@@ -15,22 +15,34 @@ Follow the [Andoid Addon Guide](http://www.gesturekit.com/learn/android-addon/) 
 With the setGestureKitListener interface you can listen to loaded method and set the action GestureActionTakeSelfie to take aselfie. 
 
 ```
-	//Implement GestureAction Plugin for taking selfie.		
 	this.gestureKit.setGestureKitListener(new GestureKitListener() {
+		
 		@Override
 		public void onGestureKitLoaded() {
 			GestureKitPlugins.getInstance().setAction(	
 					new GestureActionTakeSelfie (mActivity), "Selfie"); 				
-			};  			
+		};  			
+		
 	});	
 ```
 
 ## How it works
 
-
 GestureActionTakeSelfie implements GKActionInterface that exposes the gesture name with getActionID(). 
 
 Once a gesture is recognized if it matches the GKAction name in this case "Selfie", when the gesture is recognized with that given name the onGestureRecognized method is called.  
+
+```
+	@Override
+	public String getActionID() {		
+		return "Selfie";
+	}
+	@Override
+	public void onGestureRecognized(Object... params) {
+		// Take selfie code here. 
+	}
+	
+```
 
 ## Maintained by
 - Jose Vigil
