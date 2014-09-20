@@ -8,11 +8,11 @@ You can see the selfie working on RKT Launcher, check the [PLAY STORE](https://p
 
 ## Setup
 
-### Set the Action Gesture once GestureKit is loaded. 
+### Set the Action Gesture once GestureKit is loaded 
 
-Follow the [Andoid Addon Guide](http://www.gesturekit.com/learn/android-addon/) to set the GestureKit library running. 
+Follow the [Andoid Addon Guide](http://www.gesturekit.com/learn/android-addon/) to set the GestureKit library. 
 
-With the setGestureKitListener interface you can listen to loaded method and set the action GestureActionTakeSelfie to take aselfie. 
+With the setGestureKitListener interface on the gesturekit object, you can listen to loaded method and set the GestureActionTakeSelfie with the name parameter "Selfie". 
 
 ```
 	this.gestureKit.setGestureKitListener(new GestureKitListener() {
@@ -28,7 +28,7 @@ With the setGestureKitListener interface you can listen to loaded method and set
 
 ## How it works
 
-GestureActionTakeSelfie implements GKActionInterface that exposes the gesture name with getActionID() to the API. 
+GestureActionTakeSelfie implements GKActionInterface that exposes the gesture name with getActionID() method to the API. 
 
 Once a gesture is recognized with the same name ("Selfie"), then onGestureRecognized is called. 
 
