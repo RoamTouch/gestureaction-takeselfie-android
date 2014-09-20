@@ -28,9 +28,9 @@ With the setGestureKitListener interface you can listen to loaded method and set
 
 ## How it works
 
-GestureActionTakeSelfie implements GKActionInterface that exposes the gesture name with getActionID(). 
+GestureActionTakeSelfie implements GKActionInterface that exposes the gesture name with getActionID() to the API. 
 
-Once a gesture is recognized if it matches the GKAction name in this case "Selfie", when the gesture is recognized with that given name the onGestureRecognized method is called.  
+Once a gesture is recognized with the same name ("Selfie"), then onGestureRecognized is called. 
 
 ```
 	@Override
